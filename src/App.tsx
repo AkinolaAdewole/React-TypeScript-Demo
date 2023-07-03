@@ -7,6 +7,7 @@ import { type } from 'os';
 import PersonList from './components/PersonList';
 import Status from './components/Status';
 import Heading from './Heading';
+import Oscar from './Oscar';
 
 function App() {
 
@@ -40,6 +41,11 @@ function App() {
        <Heading>PlaceHolder Text</Heading>
 
        {/* Children Props */}
+       <Oscar>
+            <Heading>
+                Oscar goes Leanardo Decaprio
+            </Heading>
+       </Oscar>
     </div>
   );
 }

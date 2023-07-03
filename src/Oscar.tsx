@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Oscar = () => {
+
+type oscarProps={
+    children:React.ReactNode
+}
+const Oscar = (props:oscarProps) => {
   return (
-    <div> Oscar goes Leanardo Decaprio </div>
+    <div> <h2>{props.children}</h2></div>
   )
 }
 
