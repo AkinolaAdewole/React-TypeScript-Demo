@@ -7,6 +7,7 @@ type greetProps={
     isLoggedIn:boolean
 }
 const Greet = (props:greetProps) => {
+    // Optional props: I can destructured messageCount
     const {messageCount=0}=props
   return (
     <div>
