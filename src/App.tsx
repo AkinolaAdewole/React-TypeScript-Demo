@@ -1,17 +1,16 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Greet from "./components/Greet";
 import Person from "./components/Person";
-import { type } from "os";
 import PersonList from "./components/PersonList";
 import Status from "./components/Status";
 import Heading from "./Heading";
 import Oscar from "./Oscar";
 import Button from "./components/Button";
-import { log } from "console";
 import Input from "./Input";
 import Container from "./Container";
+import Box from "./components/context/Box";
+import ThemeContextProvider from "./components/context/ThemeContext";
 
 function App() {
   const personName = {
@@ -36,12 +35,12 @@ function App() {
 
   return (
     <div className="App">
-      <Greet name="Akinola" messageCount={20} isLoggedIn={false} />
-      <Person name={personName} />
-      <PersonList names={namelist} />
+      {/* <Greet name="Akinola" messageCount={20} isLoggedIn={false} /> */}
+      {/* <Person name={personName} /> */}
+      {/* <PersonList names={namelist} /> */}
 
-      <Status status="Loading" />
-      <Heading>PlaceHolder Text</Heading>
+      {/* <Status status="Loading" /> */}
+      {/* <Heading>PlaceHolder Text</Heading> */}
 
       {/* Children Props */}
       <Oscar>
@@ -61,6 +60,13 @@ function App() {
 
       <Input value="" handleChange={(event) => console.log(event)} />
       <Container styles={{border:'1px solid black', padding:'1rem'}}/>
+
+
+       {/* useContext */}
+       <ThemeContextProvider>
+          <Box />
+       </ThemeContextProvider>
+
     </div>
   );
 }

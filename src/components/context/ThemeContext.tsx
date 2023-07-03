@@ -4,8 +4,11 @@ import theme from './Theme'
 type themeContextProviderProps={
     children:React.ReactNode
 }
-const ThemeContext = createContext(theme)
+export const ThemeContext = createContext(theme)
 
-const themeContextProvider=({children}:themeContextProviderProps)=>{
+
+const ThemeContextProvider=({children}:themeContextProviderProps)=>{
     return <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider> 
 }
+
+export default ThemeContextProvider;
