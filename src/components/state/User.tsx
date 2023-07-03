@@ -15,10 +15,11 @@ type AuthUser={
 
 // In React TypeScript, when using the useState hook to manage state in a functional component,
 //  you can use type assertions to explicitly define the type of the state variable. 
-// Type assertions allow you to override the inferred type and ensure that the state variable has the correct type.
+// Type assertions allow you to override the type inference and ensure that the state variable has the correct type.
 
 const User = () => {
     const [user, setUser] =  useState <AuthUser | null>(null)
+    const [logger, setLogger] = useState <AuthUser>({} as AuthUser)
 
     const handleLoggedIn=()=>{
         setUser({
@@ -32,13 +33,24 @@ const User = () => {
         setUser(null);
     }
 
+    const handleLogger=()=>{
+        setLogger({
+            name:'Adewole',
+            email:'adewole@example.com'
+         })
+    }
+
   return (
   
     <div>
           <button onClick={handleLoggedIn}>Log In</button>
         <button onClick={handleLoggedOut}>Log Out</button>
+         
           <div> User is {user?.name}</div>
           <div>email is {user?.email}</div>
+
+          <div>Logger is {logger.name}</div>
+          <div>Logger is {logger.email}</div>
     </div>
   )
 }
