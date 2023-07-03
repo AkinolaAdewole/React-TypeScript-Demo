@@ -6,8 +6,12 @@ const Loggedin = () => {
 
     const [isLoggedIn, setisLoggedIn] = useState(false)
 
-    const handleLoggedIn=()=>{}
-    const handleLoggedOut=()=>{}
+    const handleLoggedIn=()=>{
+        setisLoggedIn(true);
+    }
+    const handleLoggedOut=()=>{
+        setisLoggedIn(false);
+    }
   return (
     <>
        <button onClick={handleLoggedIn}>Log In</button>
