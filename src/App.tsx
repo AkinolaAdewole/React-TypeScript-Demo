@@ -5,6 +5,8 @@ import  Greet  from './components/Greet'
 import Person from './components/Person';
 import { type } from 'os';
 import PersonList from './components/PersonList';
+import Status from './components/Status';
+import Heading from './Heading';
 
 function App() {
 
@@ -33,6 +35,11 @@ function App() {
        <Greet name='Akinola' messageCount={20} isLoggedIn={false} />
        <Person name={personName}/>
        <PersonList names={namelist}/>
+
+       <Status status='Loading'/>
+       <Heading>PlaceHolder Text</Heading>
+
+       {/* Children Props */}
     </div>
   );
 }
