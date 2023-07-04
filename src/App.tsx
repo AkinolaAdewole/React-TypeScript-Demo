@@ -89,7 +89,7 @@ function App() {
         onClick={(item)=>(console.log(item))}/>
 
 
-        <RandomNumber value={10} />
+        <RandomNumber value={10} isPositive />
     </div>
   );
 }
