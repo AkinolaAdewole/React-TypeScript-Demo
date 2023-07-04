@@ -1,11 +1,29 @@
-type RandomNumberProps={
+type RandomNumberType ={
     value:number
-    isPositive?:boolean
-    isNegative?:boolean
-    isZero?:boolean 
 }
 
-export const RandomNumber=({value,isPositive,isNegative,isZero}:RandomNumberProps)=>{
+type PositiveNumber = RandomNumberType &{
+    isPositive:boolean
+    isNegative?:never
+    isZero?:never
+}
+
+type NegativeNumber=RandomNumberType &{
+    isNegative:boolean
+    isPostive?:never
+    isZero?:never
+}
+
+type ZeroNumber=RandomNumberType &{
+    isZero:boolean
+    isPositive?:never
+    isNegative?:never
+}
+
+type RandomNumberProps= PositiveNumber | NegativeNumber | ZeroNumber 
+
+
+export const RandomNumber=({value, isPositive,isNegative,isZero}:RandomNumberProps)=>{
     return(
         <div>
             {value} {isPositive && 'positive'} {isNegative && 'negative'} {''} {isZero && 'zero'} 

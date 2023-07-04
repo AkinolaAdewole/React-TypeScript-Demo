@@ -1,0 +1,66 @@
+In React TypeScript, you can use generic props to create components that are more flexible and reusable.
+ Generic props allow you to define types for props that can vary based on the input data, making your components more type-safe and versatile.
+
+To use generic props in a React TypeScript component, follow these steps:
+
+Define the Generic Props:
+
+In your component's definition, add angle brackets (<>) after the component name to specify the generic props. 
+Inside the angle brackets, define the names of the generic props, which are represented by a type parameter (usually denoted as T).
+Use the Generic Props:
+
+Within your component, use the generic props as you would with regular props. 
+The difference is that now the generic props can have different types based on how you use the component.
+
+
+
+Here's an example of a generic functional component that accepts a generic data prop and a callback function that operates on that data:
+
+
+
+
+
+import React from 'react';
+
+// Define the generic props with a type parameter T
+
+type Props<T> {
+  data: T;
+  onClick: (item: T) => void;
+}
+
+// Use the generic Props<T> in the component
+
+function GenericComponent<T>({ data, onClick }: Props<T>) {
+  return (
+    <div>
+      {data.map((item, index) => (
+        <div key={index} onClick={() => onClick(item)}>
+          {item}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// Example usage:
+const strings: string[] = ['Hello', 'World'];
+const numbers: number[] = [1, 2, 3];
+
+// The component can accept different types of data based on the type parameter T
+const StringComponent = () => (
+  <GenericComponent<string> data={strings} onClick={(item) => console.log(item)} />
+);
+
+const NumberComponent = () => (
+  <GenericComponent<number> data={numbers} onClick={(item) => console.log(item)} />
+);
+
+
+
+In this example, we created a GenericComponent that uses a generic type parameter T. The component takes in an array of data (data) and a callback function (onClick) to handle click events on individual items in the data array.
+ The type of data and the callback parameter (item) depend on the generic type T.
+
+Using generic props allows you to create components that can handle various types of data, making your code more reusable and type-safe.
+ It's especially useful when you want to create flexible and adaptable components
+  that can be used with different data types in various parts of your application.

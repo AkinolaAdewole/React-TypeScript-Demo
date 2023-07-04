@@ -1,0 +1,46 @@
+In React TypeScript, you can restrict the allowed props for a component by using TypeScript's type annotations and interfaces.
+By defining the prop types, you can ensure that the component only receives the expected props and prevent potential errors caused by incorrect usage.
+
+Here's an example of how to restrict props in a React TypeScript component:
+
+import React from 'react';
+
+type MyComponentProps {
+  name: string;
+  age: number;
+  isStudent: boolean;
+}
+
+const MyComponent = ({ name, age, isStudent }:MyComponentProps) => {
+  return (
+    <div>
+      <p>Name: {name}</p>
+      <p>Age: {age}</p>
+      <p>Is Student: {isStudent ? 'Yes' : 'No'}</p>
+    </div>
+  );
+};
+
+export default MyComponent;
+
+
+
+
+
+In the example above, we define an interface MyComponentProps that describes the expected prop types for the MyComponent component. 
+It includes name of type string, age of type number, and isStudent of type boolean.
+
+The MyComponent component is then annotated with { name, age, isStudent }:MyComponentProps , specifying that it expects props of type MyComponentProps. 
+Within the component, we can destructure the props object to access the individual prop values (name, age, isStudent).
+
+By using this approach, TypeScript will enforce that the component is called with the required props and with the correct types. 
+If you try to pass props that don't match the defined types, TypeScript will show a compilation error.
+
+This type-checking mechanism helps catch potential bugs during development and provides better documentation for the component's usage. 
+It also makes it easier for other developers to understand and use your component correctly.
+
+Note: It's important to ensure that the prop types defined in the interface align with how the component is used and the expected prop values.
+
+
+
+
