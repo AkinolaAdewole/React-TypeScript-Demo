@@ -6,11 +6,12 @@ type counterProp={
 }
 
 type counterState={
-    state:number
+    count:number
 }
 
-
-export default class Counter extends Component {
+// connect the type with the class component
+// If You don't have prop, put an empty object{} and if you have state, simply remove it 
+export default class Counter extends Component <counterProp, counterState>{
     state={
         count:0,
     }

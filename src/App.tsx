@@ -13,6 +13,9 @@ import Box from "./components/context/Box";
 import ThemeContextProvider from "./components/context/ThemeContext";
 import Uzer from "./components/context/Uzer";
 import { UserContextProvider } from "./components/context/Uzercontext";
+import Counter from "./components/class/Counter";
+import { Private } from "./components/auth/Private";
+import { Profile } from "./components/auth/Profile";
 
 function App() {
   const personName = {
@@ -45,9 +48,9 @@ function App() {
       {/* <Heading>PlaceHolder Text</Heading> */}
 
       {/* Children Props */}
-      <Oscar>
+      {/* <Oscar>
         <Heading>Oscar goes Leanardo Decaprio</Heading>
-      </Oscar>
+      </Oscar> */}
 
       {/*button with props  */}
       {/* <Button handleClick={()=>{
@@ -73,6 +76,11 @@ function App() {
       < UserContextProvider>
                 <Uzer/>
       </UserContextProvider>
+
+      {/* Class-based componenet */}
+      <Counter message=""/>
+
+      <Private isLoggedIn={true} Component={Profile}/>
     </div>
   );
 }

@@ -1,0 +1,16 @@
+Define prop types:
+
+Before using props in a component, define the types of props it accepts. 
+This helps TypeScript enforce type safety and provides better IDE support.
+For functional components, define the prop types using the React.FC (functional component) or React.
+FunctionComponent type. Specify the props interface as a generic parameter. 
+
+For example:
+type MyComponentProps = {
+  name: string;
+  age: number;
+}
+
+export const MyComponent=({ name, age}:MyComponentProps) => {
+  // Component logic here
+};
