@@ -14,3 +14,53 @@ type MyComponentProps = {
 export const MyComponent=({ name, age}:MyComponentProps) => {
   // Component logic here
 };
+
+
+
+
+For class components, define the prop types using the React.ComponentProps utility type. For example:
+
+type MyComponentProps {
+  name: string;
+  age: number;
+}
+
+class MyComponent extends React.Component<MyComponentProps> {
+  // Component logic here
+}
+
+
+
+
+2.
+Use props in components:
+
+Access the prop values inside the component by destructuring them from the props object in functional components or using this.
+props in class components.
+TypeScript will provide type checking for the prop values based on the defined prop types.
+  For example:
+
+  const MyComponent: React.FC<MyComponentProps> = ({ name, age, onClick }) => {
+  return (
+    <div>
+      <p>Name: {name}</p>
+      <p>Age: {age}</p>
+      <button onClick={onClick}>Click me</button>
+    </div>
+  );
+};
+
+
+3.
+Pass props to components:
+
+When using the component, provide the values for the props. TypeScript will enforce that the provided values match the expected prop types.
+Pass the prop values as attributes when rendering the component. For example:
+
+  const App: React.FC = () => {
+  const handleClick = () => {
+    console.log('Button clicked');
+  };
+
+  return <MyComponent name="John" age={25} onClick={handleClick} />;
+};
