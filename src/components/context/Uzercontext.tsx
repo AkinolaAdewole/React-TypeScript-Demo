@@ -10,6 +10,12 @@ type userContextProviderProps={
     children: React.ReactNode
 }
 
+
+// React.ReactNode is a type in React TypeScript that represents the possible types of children that a React component can have. 
+// It can be used in various scenarios to specify the expected type of children or return values.
+
+
+
 //Specify thr type for our context value
 type userContextType={
     user:AuthUzer | null;
