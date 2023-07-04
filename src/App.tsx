@@ -93,6 +93,8 @@ function App() {
         <RandomNumber value={10} isPositive />
 
         <Toast position="Left-Center" />
+
+        <B
     </div>
   );
 }
