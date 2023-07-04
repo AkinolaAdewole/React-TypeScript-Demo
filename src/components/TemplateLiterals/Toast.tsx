@@ -8,10 +8,14 @@ type HorizontalPosition= "Right" | "Center" | "Left"
 type VerticalPosition= "Top" | "Center" | "Bottom"
 
 type ToastProps={
-    position:`${HorizontalPosition}-${VerticalPosition}`
+    // position:`${HorizontalPosition}-${VerticalPosition}`
+    //You can add Exclude
+    position: | Exclude<`${HorizontalPosition}-${VerticalPosition}`,"Center-Center"> | 'Center'
 }
-export const Toast=({Position})=>{
+const Toast=({position}:ToastProps)=>{
     return (
-        <div>Toast Notification Position - {Position}</div>
+        <div>Toast Notification Position - {position}</div>
     )
 }
+
+export default Toast 
