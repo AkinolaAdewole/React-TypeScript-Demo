@@ -5,7 +5,8 @@ import React,{useRef,useEffect} from 'react'
 // manipulating the DOM, or any other operation that affects the outside world.
 
 const DomRef = () => {
-    const inputRef=useRef(null)
+  // since I am accessing input, I will use HTMLinputElement and add exclamation mark to null
+    const inputRef=useRef<HTMLInputElement>(null!)
 
     useEffect(() => {
       inputRef.current.focus()
