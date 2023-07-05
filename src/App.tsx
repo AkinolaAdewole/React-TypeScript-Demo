@@ -73,28 +73,28 @@ function App() {
 
 
        {/* useContext */}
-       <ThemeContextProvider>
+       {/* <ThemeContextProvider>
           <Box />
-       </ThemeContextProvider>
+       </ThemeContextProvider> */}
 
 
-      < UserContextProvider>
+      {/* < UserContextProvider>
                 <Uzer/>
-      </UserContextProvider>
+      </UserContextProvider> */}
 
       {/* Class-based componenet */}
       <Counter message=""/>
-
+{/* 
       <Private isLoggedIn={true} Component={Profile}/>
 
       <List 
         items={['Batman','Superman',]}
-        onClick={(item)=>(console.log(item))}/>
+        onClick={(item)=>(console.log(item))}/> */}
 
 
-        <RandomNumber value={10} isPositive />
+        {/* <RandomNumber value={10} isPositive />
 
-        <Toast position="Left-Center" />
+        <Toast position="Left-Center" /> */}
 
 
         <CustomButton variant="Primary" onClick={()=>console.log('clicked')}>

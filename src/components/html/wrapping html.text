@@ -1,0 +1,49 @@
+In React TypeScript, you can wrap HTML elements using custom components. 
+
+Here's an example of how you can wrap an HTML element using a custom component:
+
+
+
+import React from 'react';
+
+type WrapperProps= {
+  children: React.ReactNode;
+}
+
+const Wrapper= ({ children }:WrapperProps) => {
+  return (
+    <div className="wrapper">
+      {children}
+    </div>
+  );
+};
+
+export default Wrapper;
+
+
+In the above example, we define a custom component called Wrapper. 
+It accepts a single prop called children of type React.ReactNode, which represents the content that will be wrapped.
+
+Inside the Wrapper component, we use the <div> element with a className of "wrapper" to create a container element. 
+We render the children prop within the <div> element using curly braces {}.
+
+
+To use the Wrapper component and wrap an HTML element, you can do the following:
+
+import React from 'react';
+import Wrapper from './Wrapper';
+
+const App = () => {
+  return (
+    <div>
+      <Wrapper>
+        <h1>Hello, World!</h1>
+        <p>This is an example of wrapping an HTML element.</p>
+      </Wrapper>
+    </div>
+  );
+};
+
+export default App;
+
+In this example, we import the Wrapper component and use it
