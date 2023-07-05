@@ -102,8 +102,8 @@ function App() {
         </CustomButton>
 
           <Text as="h1" size="lg">Heading</Text>
-          <Text as="h2" size="md">Paragraph</Text>
-          <Text as="h3" size="sm">Label</Text>
+          <Text as="p" size="md">Paragraph</Text>
+          <Text as="label" htmlFor="someId" size="sm" color="secondary">Label</Text>
     </div>
   );
 }
