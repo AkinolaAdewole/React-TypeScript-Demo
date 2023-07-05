@@ -20,6 +20,7 @@ import { List } from "./components/generics/List";
 import { RandomNumber } from "./components/restriction/RandomNumber";
 import Toast from "./components/TemplateLiterals/Toast";
 import CustomButton from "./components/html/Button";
+import Text from "./components/polymorphic/Text";
 
 function App() {
   const personName = {
@@ -100,6 +101,9 @@ function App() {
           Primary Button
         </CustomButton>
 
+          <Text as="h1" size="lg">Heading</Text>
+          <Text as="h2" size="md">Paragraph</Text>
+          <Text as="h3" size="sm">Label</Text>
     </div>
   );
 }
