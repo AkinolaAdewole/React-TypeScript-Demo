@@ -2,7 +2,8 @@ import React from 'react'
 
 type ButtonProps={
     variant: 'Primary' | 'Secondary'
-} & React.ComponentProps<'button'>
+    children:string
+} & Omit <React.ComponentProps<'button'>,'children'>
 
 const CustomButton = ({variant, children, ...rest} :ButtonProps) => {
   return (
