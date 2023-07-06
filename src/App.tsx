@@ -82,14 +82,18 @@ function App() {
                 <Uzer/>
       </UserContextProvider> */}
 
+
+
+
       {/* Class-based componenet */}
+
       <Counter message=""/>
-{/* 
+
       <Private isLoggedIn={true} Component={Profile}/>
 
       <List 
         items={['Batman','Superman',]}
-        onClick={(item)=>(console.log(item))}/> */}
+        onClick={(item)=>(console.log(item))}/>
 
 
         {/* <RandomNumber value={10} isPositive />
