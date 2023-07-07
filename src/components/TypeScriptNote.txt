@@ -1,0 +1,15 @@
+In TypeScript, both type and interface are used to define custom types. 
+They have some similarities but also some differences in terms of their features and usage.
+
+Similarities:
+
+Both type and interface can be used to define object types, function types, union types, and more.
+They both allow you to define properties, methods, and function signatures within their definitions.
+Both type and interface can be extended and implemented.
+
+
+
+Differences:
+
+Syntax: type uses the type keyword, while interface uses the interface keyword. 
+For example:
