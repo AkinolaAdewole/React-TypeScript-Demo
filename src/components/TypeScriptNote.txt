@@ -13,3 +13,48 @@ Differences:
 
 Syntax: type uses the type keyword, while interface uses the interface keyword. 
 For example:
+
+type PersonType = {
+  name: string;
+  age: number;
+};
+
+interface PersonInterface {
+  name: string;
+  age: number;
+}
+
+
+Declaration merging: Only interfaces support declaration merging, 
+which means you can combine multiple declarations of the same name into a single definition. 
+This can be useful when working with third-party libraries or extending existing types.
+
+Extending types: interface allows you to extend other interfaces using the extends keyword, 
+while type uses the & operator to intersect multiple types. 
+
+Here's an example:
+
+        interface Animal {
+        name: string;
+        }
+
+        interface Dog extends Animal {
+        breed: string;
+        }
+
+        type Cat = Animal & {
+        color: string;
+        };
+
+
+Implementing classes: interface can be used to define the shape of a class, and a class can implement multiple interfaces.
+ type cannot be directly used to describe class instances.
+
+Readability and style preference: The choice between type and interface can also come down to personal preference or team conventions. 
+Some developers prefer the simplicity and readability of interface, while others prefer the flexibility and expressive power of type.
+
+In general, interface is commonly used to define object shapes and contracts, especially when working with object-oriented programming concepts. 
+On the other hand, type is often used for more complex type compositions, unions, and aliases.
+
+Both type and interface serve similar purposes but have different features and use cases. 
+It's important to choose the appropriate one based on the specific requirements and style preferences of your project.
